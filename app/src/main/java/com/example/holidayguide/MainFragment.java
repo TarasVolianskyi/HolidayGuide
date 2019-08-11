@@ -22,13 +22,13 @@ class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_main, container, false);
-        initView();
+       initView();
         return view;
     }
 
 
     private void initView() {
-        listView = (ListView) view.findViewById(R.id.card_listView);
+      listView = (ListView) view.findViewById(R.id.card_listView);
 
         listView.addHeaderView(new View(getContext()));
         listView.addFooterView(new View(getContext()));
