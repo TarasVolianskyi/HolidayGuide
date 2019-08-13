@@ -1,5 +1,6 @@
 package com.example.holidayguide;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -24,7 +26,7 @@ public class LoginPage extends Fragment implements View.OnClickListener {
     private String batchId = "weew";
     private TextView textView;
     private TextView textView1;
-
+    private LinearLayout linearLayout;
 
 
     @Nullable
@@ -33,7 +35,18 @@ public class LoginPage extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.login_page, container, false);
         initView();
         initBL();
+        initAnimationBackground();
         return view;
+    }
+
+    private void initAnimationBackground() {
+
+        linearLayout = view.findViewById(R.id.login_layout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(1000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
+
     }
 
     private void initBL() {
